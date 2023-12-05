@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { useState} from 'react';
+import MonthContext from './context/monthcontext';
+import Table from './components/table';
+import Statistics from './components/statistics';
+import BarChartDetails from './components/barchart';
+import TopSection from './components/topSection';
 import './App.css';
 
-function App() {
+const App = () => {
+  
+  const [month, changeMonth] = useState(1)
+  const [searchText, changeSearchText] = useState("")
+
+
+  const updateSearchText = (value) => (changeSearchText(value))
+
+  const updateMonth = (month) => (changeMonth(month))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div className="app-container">
+      <MonthContext.Provider value={{month, searchText, changeMonth: updateMonth,updateSearchText}}>
+        <TopSection/>
+        <Table/>
+        <Statistics/>
+        <BarChartDetails/>
+      </MonthContext.Provider>
+      </div>
+  )
 }
 
 export default App;

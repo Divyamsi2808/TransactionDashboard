@@ -1,0 +1,57 @@
+
+
+.statistics {
+    margin: 20px auto;
+    background-color: rgb(225, 123, 45);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px 4px rgba(52, 47, 47, 0.1);
+}
+
+.statistics h1 {
+    color: #2b2727;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 600;
+}
+
+.statistics div {
+    margin: 20px;
+}
+
+.statistics div div{
+    display: flex;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.statistics div div h1{
+    width: 260px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.statistics div div p{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+    .statistics h1{
+        font-size: 20px;
+    }
+
+    .statistics div{
+        margin: 10px;
+        padding: 12px;
+    }
+
+    .statistics div div h1{
+        font-size: 16px;
+    }
+    .statistics div div p{
+        text-align: right;
+    }
+}
